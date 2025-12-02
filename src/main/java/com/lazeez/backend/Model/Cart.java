@@ -1,5 +1,6 @@
 package com.lazeez.backend.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,10 +22,12 @@ public class Cart {
     private int id;
 
 
-    @OneToOne(mappedBy = "customer_id")
+    @OneToOne
+    @JoinColumn(name = "customer_id")
     private  Customer customer;
 
-    @OneToMany(mappedBy = "product_id")
+    @OneToMany
+    @JsonIgnore
     List<Product> products=new ArrayList<>();
 
 

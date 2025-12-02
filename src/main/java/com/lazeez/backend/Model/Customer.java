@@ -2,10 +2,8 @@ package com.lazeez.backend.Model;
 
 import com.lazeez.backend.Enum.Gender;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.validation.constraints.Email;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.lang.reflect.Type;
@@ -16,6 +14,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Builder
 public class Customer {
 
     @Id
@@ -29,6 +28,7 @@ public class Customer {
     private int age;
 
     @Column(unique = true,nullable = false)
+    @Email
     private String email;
 
     @Column
@@ -41,7 +41,7 @@ public class Customer {
     @CreationTimestamp
     private Date createdAt;
 
-    @OneToOne(mappedBy = "cart")
+    @OneToOne(mappedBy = "customer" , cascade = CascadeType.ALL)
     private Cart cart;
 
 
