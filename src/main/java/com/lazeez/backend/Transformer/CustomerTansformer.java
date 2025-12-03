@@ -14,7 +14,6 @@ public class CustomerTansformer {
                 .email(customerRequest.getEmail())
                 .mobNo(customerRequest.getMobNo())
                 .gender(customerRequest.getGender())
-                .cart(new Cart())
                 .build();
     }
 

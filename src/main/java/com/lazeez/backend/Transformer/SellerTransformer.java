@@ -20,7 +20,6 @@ public class SellerTransformer {
         return SellerResponse.builder()
                 .name(seller.getName())
                 .email(seller.getEmail())
-                .products(new ArrayList<>())
                 .build();
     }
 }

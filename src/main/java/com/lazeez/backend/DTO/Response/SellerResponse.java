@@ -19,5 +19,4 @@ public class SellerResponse {
 
     private String email;
 
-    List<Product> products = new ArrayList<>();
 }
