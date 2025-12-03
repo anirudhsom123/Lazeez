@@ -6,7 +6,6 @@ import jakarta.validation.constraints.Email;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
-import java.lang.reflect.Type;
 import java.util.Date;
 
 @Getter
